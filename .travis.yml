@@ -12,12 +12,10 @@ install:
 
 script:
   - echo "script"
-  - docker cp multus:/usr/src/multus-cni/bin/multus multus
 
 after_success:
   - echo "after_success"
   - ls -lth
-  - docker rm -f multus
 
 deploy:
   provider: pages ## github pages
