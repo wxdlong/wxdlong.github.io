@@ -21,5 +21,7 @@ deploy:
   provider: pages ## github pages
   github-token: $GITHUB_TOKEN
   local-dir: public   ##hugo deploy dir
-  target-branch: gh-pages
+  target-branch: master
   skip_cleanup: true
+  on:
+    branch: blog
