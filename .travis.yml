@@ -23,6 +23,6 @@ deploy:
   local-dir: public   ##hugo deploy dir
   target-branch: master
   skip_cleanup: true
-  fqdn: ycat.top
+  fqdn: https://ycat.top
   on:
     branch: blog
