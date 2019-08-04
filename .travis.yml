@@ -7,22 +7,21 @@ before_install:
 
 install:
   - echo "install- ${PWD}"
-  - docker run -it --rm -v ${PWD}:/code wxdlong/hugo
-
+  - docker run -it --rm -v ${PWD}:/code wxdlong/hugo   ## use docker build
 
 script:
   - echo "script"
 
 after_success:
   - echo "after_success"
-  - ls -lth
+  - ls -lth   ## you can see hugo public generatored in the delpoy log
 
 deploy:
   provider: pages ## github pages
-  github-token: $GITHUB_TOKEN
+  github-token: $GITHUB_TOKEN  ## need conifg in setting
   local-dir: public   ##hugo deploy dir
   target-branch: master
   skip_cleanup: true
-  fqdn: https://ycat.top
+  fqdn: https://ycat.top   ##customer DNS
   on:
-    branch: blog
+    branch: blog    ## when branch blog push

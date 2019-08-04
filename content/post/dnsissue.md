@@ -6,8 +6,12 @@ keywords: ["hugo","gitlab pages"]
 description: "hugo 发布到gitlab pages上遇到的那些坑."
 ---
 > 做生意讲信誉 ---- 理所当然
+
+
 ## Issue
-ping IP successful, but ping host failed.
+　　ping IP successful, but ping host failed.
+
+<!--more-->
 ```bash
 [root@localhost ~]# vi /etc/hosts
 [root@localhost ~]# ping 8.8.8.8
