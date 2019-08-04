@@ -3,7 +3,7 @@ services:
 
 before_install:
   - echo "before install"
-  - ls -lth
+  - ls -lth themes
 
 install:
   - echo "install- ${PWD}"
@@ -23,5 +23,6 @@ deploy:
   local-dir: public   ##hugo deploy dir
   target-branch: master
   skip_cleanup: true
+  fqdn: ycat.top
   on:
     branch: blog
