@@ -16,7 +16,7 @@ draft: false
 <!--more-->
 
 ## 依赖库问题
-　　也许这术编译的时候还是会依赖`libstdc++.so.6`, `libgcc_s.so.1`,`ld-musl-x86_64.so.1`. 这个时候必须安装`glibc-static`的c标准库的静态编译版本
+　　也许这术编译的时候还是会依赖`libstdc++.so.6`, `libgcc_s.so.1`,`ld-musl-x86_64.so.1`. `go install -v -ldflags '-linkmode external -extldflags -static -s -w'`
 
 
 ```bash
@@ -27,12 +27,6 @@ libgcc_s.so.1 => /usr/lib/libgcc_s.so.1 (0x7fae5638b000)
 libc.musl-x86_64.so.1 => /lib/ld-musl-x86_64.so.1 (0x7fae564f4000)
 
 ```
-
-`apk add --no-cache build-base libstdc++ musl` Alpine   
-
-## Build Hugo
-
-live empty
 
 ## Docker 例子
 1. 最小Go APP Docker镜像1.4MB
