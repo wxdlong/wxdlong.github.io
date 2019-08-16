@@ -22,7 +22,7 @@ draft: false
 ![IO](/jpg/201908/jconsoleLogin.jpg)
 
 3. 看，连上了哟。  
-![IO](/jpg/201908/jconsoleDetailjpg)
+![IO](/jpg/201908/jconsoleDetail.jpg)
 
 4. 连接jvisualVM, `jvisualvm.exe --cp:a ./jboss-cli-client.jar`
     ```bash
@@ -38,5 +38,5 @@ draft: false
     Use '--console new' to create a separate console window.
     ```
 
-5. 看，又连上了哟。
-![IO](/jpg/201908/jvisualVmDetail.jpg)
+5. 看，又连上了哟。  
+![IO](/jpg/201908/JvisualVmDetail.jpg)
