@@ -23,9 +23,9 @@ EOF
 <!--more-->
 
 ## Here Document
-　　专业术语Here Document,是一种特殊的IO重定向，EOF=`End of File`。     
-1. `EOF`作为分隔符代号，可以写成任意字符，只需要保证前后一样即可.
+　　专业术语Here Document,是一种特殊的IO重定向，EOF=`End of File`.  
 
+1. `EOF`作为分隔符代号，可以写成任意字符，只需要保证前后一样即可.  
     ```bash
     cat <<abcdefo
     Any char is
