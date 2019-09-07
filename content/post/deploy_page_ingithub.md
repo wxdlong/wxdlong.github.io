@@ -22,7 +22,8 @@ draft: false
 
 ```bash
 git checkout -b blog
-git branch --set-upstream blog origin/blog
+git branch --set-upstream-to=origin/blog blog
+分支 blog 设置为跟踪来自 origin 的远程分支 blog。
  
 ```   
     打开git/config 可以看到关联的branch    
