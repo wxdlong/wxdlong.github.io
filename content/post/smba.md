@@ -18,16 +18,6 @@ Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.5.22]
 	---------       ----      -------
 	Chainedbox      Disk      Android /mnt/sdcard
 	IPC$            IPC       IPC Service (Samba on Android)
-Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.5.22]
-
-	Server               Comment
-	---------            -------
-	WXDLONG              Samba 4.5.12-Debian
-	YHTX_MQS1_26         Samba on Android
-
-	Workgroup            Master
-	---------            -------
-	WORKGROUP            YHTX_MQS1_26
 ```
 
 <!--more-->
