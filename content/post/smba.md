@@ -4,6 +4,8 @@ date: 2019-09-08T10:49:34Z
 Keywords: ["linux","smba"]
 draft: false
 ---
+>天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形，
+高下相轻，音声相和，前后相随。   
 
 How to connect to smba in Linux? Let's begin.
 
