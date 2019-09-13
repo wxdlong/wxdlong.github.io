@@ -23,7 +23,7 @@ draft: false
 4. 编辑Action: 左边文本编辑,右边文档说明. 一切这么自然.什么都不用改,点start commit.它就会自动Build. 这里我稍微更改了一下输出为Hello Action! 以增加成就感.  
 ![IO](/jpg/201908/editAction.png)
 
-5. 查看Action结果. 从结果来看Action配置文件的含义.是不是很简单. 简单翻译一下: 当push代码时, 开始在ubuntu-latest上构建,步骤1-> checkout代码,2-> 运行单行脚本-输出hello Wolrd!,3-> 输出- Hello Action!
+5. 查看Action结果. 从结果来看Action配置文件的含义.是不是很简单. 简单翻译一下: 当push代码时, 开始在ubuntu-latest上构建,步骤1-> checkout代码,2-> 运行单行脚本-输出`hello Wolrd!`,3-> 输出- `Hello Action!`
 ![IO](/jpg/201908/ActionRes.png)
     ```yaml
     name: CI
