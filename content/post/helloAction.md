@@ -11,7 +11,7 @@ draft: false
 <!--more-->
 
 
-1. 创建一个Repo
+1. 创建一个Action [Repo](https://github.com/wxdlong/hello-action)
 2. 点击Action创建第一个action   
 ![IO](/jpg/201908/start_action.png)
 3. Action比其它CI人性化的地方就是你的第一个Action,他会给你列出一系列workflow模版. 选第一个SimpleWorkflow.     
@@ -43,3 +43,6 @@ draft: false
           run: |
             echo Hello Action!
     ```
+
+
+> 官方文档: https://help.github.com/en/articles/workflow-syntax-for-github-actions
