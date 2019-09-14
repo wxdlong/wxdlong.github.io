@@ -21,7 +21,7 @@ draft: false
 
 ## 配置双重身份认证.
 一定要先配置双重身份认证,双重身份认证,[身份认证](https://help.github.com/cn/articles/configuring-two-factor-authentication ).重要的事情说三遍. 不然你点了`publish release`,github不报错,也不成功.   
-![IO](/jpg/201908/releaseAction.png)
+![IO](/jpg/201908/releaseAction.jpg)
 
 APP认证和短信认证我们选APP, 不为什么,因为人家SMS不会发给天朝.
 APP推荐[Authy](https://authy.com/guides/github/),其它两款要Money,而且界面复杂.下载这个软件需要翻城.  
@@ -69,6 +69,7 @@ total 16K
 ## 引用
 
 官方文档: https://help.github.com/en/articles/workflow-syntax-for-github-actions   
+Action文档: https://help.github.com/cn/articles/metadata-syntax-for-github-actions   
 配置双重身份认证: https://help.github.com/cn/articles/configuring-two-factor-authentication  
 推荐使用Authy认证: https://authy.com/guides/github/   
 发布Action到github市场: https://developer.github.com/marketplace/actions/publishing-an-action-in-the-github-marketplace/    
