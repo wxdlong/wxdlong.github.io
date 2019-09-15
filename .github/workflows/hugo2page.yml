@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     name: build hugo pages
     steps:
+    - uses: actions/checkout@v1
     - name: Hello hugo
       id: hugo
       uses: wxdlong/hugo-action@master
