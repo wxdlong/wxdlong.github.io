@@ -5,6 +5,7 @@ Keywords: ["Docker in Docker","Ansible","Docker"]
 draft: false
 ---
 >是以圣人之治,虚其心, 实其腹,弱其志,强其骨.
+
 Docker In Docker=在Docker Contanier里运行Docker? 有这样的需求？当然有，官方还专门有这样一个[Docker Image](!https://hub.docker.com/_/docker). 可以用于编译测试Docker本身。
 
 当然这个用法有点复杂。我们还可以当WSL用。有时候Windows中运行Docker,运行shell还不是很方便，所有一种简单的Docker In Docker环境就很有用了。

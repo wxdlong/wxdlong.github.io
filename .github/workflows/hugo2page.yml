@@ -17,6 +17,4 @@ jobs:
       uses: wxdlong/push-action@master
       with:
         access_token: ${{ secrets.ACCESS_TOKEN }}
-        folder: 'public'
-        branch: 'master'
         cname: 'https://ycat.top'
