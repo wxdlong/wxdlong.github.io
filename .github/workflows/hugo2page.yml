@@ -18,3 +18,4 @@ jobs:
       with:
         access_token: ${{ secrets.ACCESS_TOKEN }}
         cname: 'https://ycat.top'
+        branch: 'master'

@@ -5,6 +5,8 @@ Keywords: ["github","docker","action"]
 draft: false
 ---
 >不尚贤,使民不争; 不贵难得之货,使民不为盗；不见可欲,使民心不乱.
+
+
 官方[Docker Action](https://help.github.com/cn/articles/creating-a-docker-container-action)教程创建了一个最基本的`Hello world`脚本,并没有和Repo代码有任何交互. 但是如果是想要引用代码,引用Github环境变量怎么办?   
 仔细看这个Docker运行日志. 有惊奇的发现.
 
@@ -18,7 +20,7 @@ Hello wxdlong
 
 ```
 
-
+成功了!
 
 <!--more-->
 
