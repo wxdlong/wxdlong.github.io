@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>android studio on Even - A super concise theme for Hugo</title>
+    <link>https://ycat.top/tags/android-studio/</link>
+    <description>Recent content in android studio on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 10 Sep 2017 10:47:25 +0800</lastBuildDate>
+    
+	<atom:link href="https://ycat.top/tags/android-studio/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Studio messy code</title>
+      <link>https://ycat.top/post/messycode/</link>
+      <pubDate>Sun, 10 Sep 2017 10:47:25 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/messycode/</guid>
+      <description>项目源码显示乱码 设置工程编码为UTF-8 settings-&amp;gt;editor-&amp;gt;file Encodings-&amp;gt;UTF-8 控制台,IDE本身 修改IDE本身编码为UTF-8 1 2 # custom Android Studio VM options, see http://tools.android.com/tech-docs/configuration -Dfile.encoding=UTF-8 中文输入框乱码 sudo vim /opt/android-studio/bin/studio.sh 1 2 3</description>
+    </item>
+    
+  </channel>
+</rss>
