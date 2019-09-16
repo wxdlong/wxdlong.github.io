@@ -1,5 +1,8 @@
 name: Deploy to github page
-on: [push]
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   hugo-action:
@@ -10,7 +13,10 @@ jobs:
     - name: Hello hugo
       id: hugo
       uses: wxdlong/hugo-action@master
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: |
-        ls -lth
+    - name: Push to page branch
+      uses: wxdlong/push-action@master
+      with:
+        access_token: ${{ secrets.ACCESS_TOKEN }}
+        folder: 'public'
+        branch: 'master'
+        cname: 'https://ycat.top'
