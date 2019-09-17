@@ -7,14 +7,13 @@ on:
 jobs:
   hugo-action:
     runs-on: ubuntu-latest
-    name: build hugo pages
+    name: Build Hugo Pages
     steps:
-    - uses: actions/checkout@v1
-    - name: Hello hugo
-      id: hugo
+    - name: checkout code
+      uses: actions/checkout@v1
+
+    - name: Hugo Site and Deploy 2 Github Page
       uses: wxdlong/hugo-action@master
-    - name: Push to page branch
-      uses: wxdlong/push-action@master
       with:
         access_token: ${{ secrets.ACCESS_TOKEN }}
         cname: 'https://ycat.top'
