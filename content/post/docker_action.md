@@ -20,28 +20,43 @@ Hello wxdlong
 
 ```
 
-成功了!
-
 <!--more-->
 
-## 自动映射主机文件夹到容器内
-1. `/var/run/docker.sock":"/var/run/docker.sock"`  这个`docker.sock`映射进去的话,Docker container里面可以看到主机上的Docker信息.如果主机把docker bin也映射到容器里的话. 就是一个[Docker in Docker]({{< ref "/post/dockerInDocker" >}})了
+## 映射工作区至容器内
+`/home/runner/work/_temp/_github_home: /github/home`,并且设置容器内默认工作区. `--workdir /github/workspace`.这样的话,容器内部可以访问其它Action的内容.比如`checkout`出来的源码    
 
 
-```bash
-echo "pwd:  ${PWD}"
-echo "ls -lth"
-echo "Hello $1"
-time=$(date)
-echo ::set-output name=time::$time
-```
+## 传入各种环境变量 
 
-```bash
-Run wxdlong/hello-action@v7
-/usr/bin/docker run --name df7dc7a61e20181bb466a9f0ee3e0ddc3e675_091ef4 --label 0df7dc --workdir /github/workspace --rm -e INPUT_WHO-TO-GREET -e HOME -e GITHUB_REF -e GITHUB_SHA -e GITHUB_REPOSITORY -e GITHUB_ACTOR -e GITHUB_WORKFLOW -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GITHUB_EVENT_NAME -e GITHUB_WORKSPACE -e GITHUB_ACTION -e GITHUB_EVENT_PATH -e RUNNER_OS -e RUNNER_TOOL_CACHE -e RUNNER_TEMP -e RUNNER_WORKSPACE -v "/var/run/docker.sock":"/var/run/docker.sock" -v "/home/runner/work/_temp/_github_home":"/github/home" -v "/home/runner/work/_temp/_github_workflow":"/github/workflow" -v "/home/runner/work/hello-action/hello-action":"/github/workspace" 0df7dc:7a61e20181bb466a9f0ee3e0ddc3e675  "wxdlong"
-Hello wxdlong
- ::set-output name=time::Sat Sep 14 10:09:07 UTC 2019
+变量 | 含义 | 示例
+--  | --  |  --
+INPUT_WHO-TO-GREET | action定义的变量 | `wxdlong`
+HOME   | HOME path | `/github/home`
+GITHUB_REF |   | EMPTY
+GITHUB_SHA | git commit  | `359f48e3252`
+GITHUB_REPOSITORY |  repo name | `wxdlong/hello-action`
+GITHUB_ACTOR | repo owner | `wxdlong`
+GITHUB_WORKFLOW | workflow name | `Hello Action`
+GITHUB_HEAD_REF | git ref | EMPTY
+GITHUB_BASE_REF |         | EMPTY
+GITHUB_REF |   git ref      | `refs/heads/master`
+GITHUB_EVENT_NAME |  事件名称 | `push`
+GITHUB_ACTION |  action name | `wxdlonghello-action`
+GITHUB_EVENT_PATH |        | `/github/workflow/event.json`
+RUNNER_OS |  运行的操作系统 | `Linux`
+RUNNER_TOOL_CACHE |      | `/opt/hostedtoolcache`
+RUNNER_WORKSPACE | 运行空间 | `/home/runner/work/hello-action`
 
+## Docker Image
+
+Action中`image`类型可以是`Dockerfile`,``
+
+```yml
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
 ```
 
 ## 引用

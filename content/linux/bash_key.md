@@ -8,7 +8,7 @@ categories: [linux]
 tags: [shell]
 ---
 
->不尚贤, 使民不争；不贵难得之货,使民不为盗；不见可欲, 使民心不乱.
+>常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.  
 
 `set -x`, Print commands and their arguments as they are executed.   
 `set -e`, Exit immediately if a command exits with a non-zero status.   
