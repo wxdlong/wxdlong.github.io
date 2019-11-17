@@ -16,7 +16,8 @@ draft: false
 <!--more-->
 
 ## 依赖库问题
-　　也许这术编译的时候还是会依赖`libstdc++.so.6`, `libgcc_s.so.1`,`ld-musl-x86_64.so.1`. `go install -v -ldflags '-linkmode external -extldflags -static -s -w'`
+　　也许这术编译的时候还是会依赖`libstdc++.so.6`, `libgcc_s.so.1`,`ld-musl-x86_64.so.1`. 那么就用下面的命令    
+`go install -v -ldflags '-linkmode external -extldflags -static -s -w'`
 
 
 ```bash
