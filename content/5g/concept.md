@@ -8,8 +8,6 @@ categories: [5G]
 tags: [5G]
 ---
 
-
-https://www.jianshu.com/p/f9c013ac8eff
 >常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.  
 
 `set -x`, Print commands and their arguments as they are executed.   
@@ -95,6 +93,8 @@ Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般�
 * CG: Cell Group    
 * NCGI: NR Cell Global Identifier    
 * SSB: Synchronisation Signal Block    
+* SMS: Short Message Service 短信业务
+* SMC: Short Message Control
 * CSI-RS: Channel-State information reference signal, 同步信号块    
 * BWP: Bandwidth Part 部分带宽    
 * NCR: Neighbour Cell Relation    
@@ -136,3 +136,8 @@ Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般�
 * (R)AN: (Radio) Access Network    
 * UPF: User Plan Function    
 * USIM: Universal Subscriber Identity Module    
+
+
+
+## REF
+https://www.jianshu.com/p/f9c013ac8eff
