@@ -127,7 +127,8 @@ Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般�
 * PCell: Primary Cell,主小区    
 * SCell: Secondary Cell, 辅小区    
 * PSCell: Primary Secondary Cell,主辅小区    
-* RACH: Random Access Channel, 随机接入信道, 是一种上行传输信道    
+* RACH: Random Access Channel, 随机接入信道, 是一种上行传输信道  
+* RAN:	Radio Access Network  
 * AMF: Access and Mobility Management Function 接入和移动性管理    
 * SMF:    
 * UE: User Equipment    
