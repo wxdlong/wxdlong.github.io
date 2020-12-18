@@ -10,11 +10,9 @@ tags: [5G]
 
 >常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.  
 
-`set -x`, Print commands and their arguments as they are executed.   
-`set -e`, Exit immediately if a command exits with a non-zero status.   
-`+-`, Using + rather than - causes these flags to be turned off.   
-`set -o`  ## 查看当前选项的设置状态    
-Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般是针对词的. 记住一些快捷键.让你的生活更愉快哟.
+https://www.jianshu.com/p/f9c013ac8eff
+>常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.  
+5G缩写表
 <!--more-->
 ## 词汇
 
