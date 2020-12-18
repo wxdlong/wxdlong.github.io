@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>linux on Even - A super concise theme for Hugo</title>
+    <link>https://ycat.top/categories/linux/</link>
+    <description>Recent content in linux on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Sep 2019 18:34:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://ycat.top/categories/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bash 快捷键,提升命令行效率!</title>
+      <link>https://ycat.top/linux/bash_key/</link>
+      <pubDate>Sat, 21 Sep 2019 18:34:42 +0800</pubDate>
+      
+      <guid>https://ycat.top/linux/bash_key/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;set -x&lt;/code&gt;, Print commands and their arguments as they are executed.&lt;br /&gt;
+&lt;code&gt;set -e&lt;/code&gt;, Exit immediately if a command exits with a non-zero status.&lt;br /&gt;
+&lt;code&gt;+-&lt;/code&gt;, Using + rather than - causes these flags to be turned off.&lt;br /&gt;
+&lt;code&gt;set -o&lt;/code&gt;  ## 查看当前选项的设置状态&lt;br /&gt;
+Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般是针对词的. 记住一些快捷键.让你的生活更愉快哟.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Top 命令高级用法实例</title>
+      <link>https://ycat.top/post/top/</link>
+      <pubDate>Mon, 24 Dec 2018 10:31:14 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/top/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;监控linux系统状态命令,CPU MEM&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;　　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。&lt;/p&gt;
+
+&lt;p&gt;　　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sed 命令高级用法实例</title>
+      <link>https://ycat.top/post/sed/</link>
+      <pubDate>Sat, 27 Oct 2018 10:31:14 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/sed/</guid>
+      <description>基础语法 替换sed默认匹配符/, 任意字符前转义如@= \@, &amp;amp;= \# &amp;amp; 引用匹配变量 打印行数 大小写替换 圆括号匹配 合并两行内容 打印行数 删除重复行 删除所有空</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Replication Postgres Docker - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wxdlong" /><meta name="description" content="用法 全自动配置主从replication模式postgres
+docker-compose up -d
+1 2 3 4  wxd@long:~/Code/github$ docker ps CONTAINER ID IMAGE COMMAND CREATED STATUS PORTS NAMES 7f75e44e0be2 pgcluster:9.6.9 &amp;#34;docker-entrypoint.sh&amp;#34; 18 minutes ago Up 18 minutes 0.0.0.0:32771-&amp;gt;5432/tcp pgslave 14abdfa31875 pgcluster:9.6.9 &amp;#34;docker-entrypoint.sh&amp;#34; 18 minutes ago Up 18 minutes 0.0.0.0:32770-&amp;gt;5432/tcp pgmaster  " /><meta name="keywords" content="Postgres, replication, docker" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://ycat.top/post/pgdocker/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://ycat.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ycat.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ycat.top/favicon-16x16.png">
+<link rel="manifest" href="https://ycat.top/manifest.json">
+<link rel="mask-icon" href="https://ycat.top/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="https://ycat.top/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Replication Postgres Docker" />
+<meta property="og:description" content="用法
+
+全自动配置主从replication模式postgres
+
+docker-compose up -d
+
+
+1
+2
+3
+4
+
+
+wxd@long:~/Code/github$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+7f75e44e0be2        pgcluster:9.6.9     &#34;docker-entrypoint.sh&#34;   18 minutes ago      Up 18 minutes       0.0.0.0:32771-&gt;5432/tcp   pgslave
+14abdfa31875        pgcluster:9.6.9     &#34;docker-entrypoint.sh&#34;   18 minutes ago      Up 18 minutes       0.0.0.0:32770-&gt;5432/tcp   pgmaster
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ycat.top/post/pgdocker/" />
+<meta property="article:published_time" content="2019-11-16T21:29:48+08:00" />
+<meta property="article:modified_time" content="2019-11-16T21:29:48+08:00" />
+<meta itemprop="name" content="Replication Postgres Docker">
+<meta itemprop="description" content="用法
+
+全自动配置主从replication模式postgres
+
+docker-compose up -d
+
+
+1
+2
+3
+4
+
+
+wxd@long:~/Code/github$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+7f75e44e0be2        pgcluster:9.6.9     &#34;docker-entrypoint.sh&#34;   18 minutes ago      Up 18 minutes       0.0.0.0:32771-&gt;5432/tcp   pgslave
+14abdfa31875        pgcluster:9.6.9     &#34;docker-entrypoint.sh&#34;   18 minutes ago      Up 18 minutes       0.0.0.0:32770-&gt;5432/tcp   pgmaster
+
+">
+
+
+<meta itemprop="datePublished" content="2019-11-16T21:29:48&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-16T21:29:48&#43;08:00" />
+<meta itemprop="wordCount" content="751">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Replication Postgres Docker"/>
+<meta name="twitter:description" content="用法
+
+全自动配置主从replication模式postgres
+
+docker-compose up -d
+
+
+1
+2
+3
+4
+
+
+wxd@long:~/Code/github$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+7f75e44e0be2        pgcluster:9.6.9     &#34;docker-entrypoint.sh&#34;   18 minutes ago      Up 18 minutes       0.0.0.0:32771-&gt;5432/tcp   pgslave
+14abdfa31875        pgcluster:9.6.9     &#34;docker-entrypoint.sh&#34;   18 minutes ago      Up 18 minutes       0.0.0.0:32770-&gt;5432/tcp   pgmaster
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://ycat.top/" class="logo">Wxdlong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://ycat.top/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://ycat.top/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://ycat.top/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://ycat.top/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://ycat.top/" class="logo">Wxdlong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Replication Postgres Docker</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-11-16 </span>
+        
+          <span class="more-meta"> 751 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li><a href="#用法">用法</a></li>
+<li><a href="#配置主从postgres">配置主从postgres</a>
+<ul>
+<li><a href="#配置-pg-hba-conf">配置<code>pg_hba.conf</code></a></li>
+<li><a href="#配置-postgres-conf">配置<code>postgres.conf</code></a></li>
+<li><a href="#配置-recovery-conf">配置<code>recovery.conf</code></a></li>
+</ul></li>
+<li><a href="#验证">验证</a>
+<ul>
+<li><a href="#查看主从sender进程">查看主从sender进程</a></li>
+<li><a href="#查看数据库">查看数据库</a></li>
+<li><a href="#pg-controldata"><code>pg_controldata</code></a></li>
+<li><a href="#测试">测试</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <h1 id="用法">用法</h1>
+
+<p>全自动配置主从replication模式postgres</p>
+
+<p>docker-compose up -d</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wxd@long:~/Code/github$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+7f75e44e0be2        pgcluster:9.6.9     <span class="s2">&#34;docker-entrypoint.sh&#34;</span>   <span class="m">18</span> minutes ago      Up <span class="m">18</span> minutes       <span class="m">0</span>.0.0.0:32771-&gt;5432/tcp   pgslave
+14abdfa31875        pgcluster:9.6.9     <span class="s2">&#34;docker-entrypoint.sh&#34;</span>   <span class="m">18</span> minutes ago      Up <span class="m">18</span> minutes       <span class="m">0</span>.0.0.0:32770-&gt;5432/tcp   pgmaster</code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="配置主从postgres">配置主从postgres</h1>
+
+<h2 id="配置-pg-hba-conf">配置<code>pg_hba.conf</code></h2>
+
+<blockquote>
+<p>samenet 在同一网段允许访问</p>
+</blockquote>
+
+<p>host    replication     replic        samenet            md5</p>
+
+<h2 id="配置-postgres-conf">配置<code>postgres.conf</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf">wal_level = replica			# minimal, replica, or logical
+archive_mode = on		# enables archiving; off, on, or always
+				# (change requires restart)
+archive_command = &#39;cp %p /var/lib/pgsql/9.6/backups/%f&#39;		# command to use to archive a logfile segment
+				# placeholders: %p = path of file to archive
+				#               %f = file name only
+				# e.g. &#39;test ! -f /mnt/server/archivedir/%f &amp;&amp; cp %p /mnt/server/archivedir/%f&#39;
+max_wal_senders = 2 		# max number of walsender processes
+				# (change requires restart)
+wal_keep_segments = 32		# in logfile segments, 16MB each; 0 disables
+wal_sender_timeout = 60s	# in milliseconds; 0 disables
+hot_standby = on			# &#34;on&#34; allows queries during recovery</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="配置-recovery-conf">配置<code>recovery.conf</code></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-conf" data-lang="conf">standby_mode = &#39;on&#39;
+primary_conninfo = &#39;user=replic password=replic host=pgslave port=5432 sslmode=prefer sslcompression=1 krbsrvname=postgres&#39;
+recovery_target_timeline = &#39;latest&#39;
+trigger_file = &#39;/var/lib/pgsql/master&#39;
+restore_command = &#39;cp /var/lib/pgsql/9.6/backups/%f %p&#39;
+archive_cleanup_command = &#39;/usr/pgsql-9.6/bin/pg_archivecleanup -d /var/lib/pgsql/9.6/backups/ %r &gt;&gt; /var/lib/pgsql/cleanup.log&#39;</code></pre></td></tr></table>
+</div>
+</div>
+<h1 id="验证">验证</h1>
+
+<h2 id="查看主从sender进程">查看主从sender进程</h2>
+
+<ol>
+<li><p>主, <code>wal sender</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>postgres@pgmaster ~/9.6/data<span class="o">]</span>$ ps -ef <span class="p">|</span> grep post
+postgres <span class="m">127044</span>     <span class="m">55</span>  <span class="m">0</span> <span class="m">14</span>:35 ?        <span class="m">00</span>:00:00 postgres: wal sender process replic <span class="m">172</span>.26.0.3<span class="o">(</span><span class="m">46174</span><span class="o">)</span> authentication
+postgres <span class="m">127046</span>     <span class="m">55</span>  <span class="m">0</span> <span class="m">14</span>:35 ?        <span class="m">00</span>:00:00 postgres: wal sender process replic <span class="m">172</span>.26.0.3<span class="o">(</span><span class="m">46178</span><span class="o">)</span> authentication</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>从</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>postgres@pgslave ~<span class="o">]</span>$ ps -ef <span class="p">|</span> grep post
+postgres     <span class="m">57</span>     <span class="m">45</span>  <span class="m">0</span> <span class="m">15</span>:07 ?        <span class="m">00</span>:00:00 postgres: wal receiver process   streaming <span class="m">0</span>/3000060</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h2 id="查看数据库">查看数据库</h2>
+
+<ol>
+<li><p>主,</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">postgres</span><span class="o">=</span><span class="c1"># \x</span>
+Expanded display is on.
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># select * from pg_stat_replication;</span>
+-<span class="o">[</span> RECORD <span class="m">1</span> <span class="o">]</span>----+------------------------------
+pid              <span class="p">|</span> <span class="m">110</span>
+usesysid         <span class="p">|</span> <span class="m">16384</span>
+usename          <span class="p">|</span> replic
+application_name <span class="p">|</span> walreceiver
+client_addr      <span class="p">|</span> <span class="m">172</span>.26.0.3
+client_hostname  <span class="p">|</span>
+client_port      <span class="p">|</span> <span class="m">54464</span>
+backend_start    <span class="p">|</span> <span class="m">2018</span>-11-05 <span class="m">01</span>:50:18.789676+00
+backend_xmin     <span class="p">|</span>
+state            <span class="p">|</span> streaming
+sent_location    <span class="p">|</span> <span class="m">0</span>/3000220
+write_location   <span class="p">|</span> <span class="m">0</span>/3000220
+flush_location   <span class="p">|</span> <span class="m">0</span>/3000220
+replay_location  <span class="p">|</span> <span class="m">0</span>/3000220
+sync_priority    <span class="p">|</span> <span class="m">0</span>
+sync_state       <span class="p">|</span> async</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="pg-controldata"><code>pg_controldata</code></h2></li>
+
+<li><p>主库 <code>in production</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>postgres@pgmaster ~<span class="o">]</span>$ pg_controldata
+pg_control version number:            <span class="m">960</span>
+Catalog version number:               <span class="m">201608131</span>
+Database system identifier:           <span class="m">6620022152420352029</span>
+Database cluster state:               in production
+pg_control last modified:             Mon <span class="m">05</span> Nov <span class="m">2018</span> <span class="m">07</span>:11:52 AM UTC</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>从库 <code>in archive recovery</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>postgres@pgslave ~<span class="o">]</span>$ pg_controldata
+pg_control version number:            <span class="m">960</span>
+Catalog version number:               <span class="m">201608131</span>
+Database system identifier:           <span class="m">6620022152420352029</span>
+Database cluster state:               in archive recovery
+pg_control last modified:             Mon <span class="m">05</span> Nov <span class="m">2018</span> <span class="m">07</span>:11:52 AM UTC</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+
+<h2 id="测试">测试</h2>
+
+<ol>
+<li><p>create table in master</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>postgres@pgmaster ~<span class="o">]</span>$ psql
+psql <span class="o">(</span><span class="m">9</span>.6.10<span class="o">)</span>
+Type <span class="s2">&#34;help&#34;</span> <span class="k">for</span> help.
+
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># create table test(</span>
+postgres<span class="o">(</span><span class="c1">#     id int,</span>
+postgres<span class="o">(</span><span class="c1">#     name char(50)</span>
+postgres<span class="o">(</span><span class="c1"># );</span>
+CREATE TABLE
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \d</span>
+        List of relations
+Schema <span class="p">|</span> Name <span class="p">|</span> Type  <span class="p">|</span>  Owner
+--------+------+-------+----------
+public <span class="p">|</span> <span class="nb">test</span> <span class="p">|</span> table <span class="p">|</span> postgres
+<span class="o">(</span><span class="m">1</span> row<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>check table replic to slave</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="o">[</span>postgres@pgslave ~<span class="o">]</span>$ psql
+psql <span class="o">(</span><span class="m">9</span>.6.10<span class="o">)</span>
+Type <span class="s2">&#34;help&#34;</span> <span class="k">for</span> help.
+
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># \d</span>
+        List of relations
+Schema <span class="p">|</span> Name <span class="p">|</span> Type  <span class="p">|</span>  Owner
+--------+------+-------+----------
+public <span class="p">|</span> <span class="nb">test</span> <span class="p">|</span> table <span class="p">|</span> postgres
+<span class="o">(</span><span class="m">1</span> row<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>create one data in master</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">postgres</span><span class="o">=</span><span class="c1"># insert into test (id,name) values (1,&#39;bingo&#39;);</span>
+INSERT <span class="m">0</span> <span class="m">1</span>
+<span class="nv">postgres</span><span class="o">=</span><span class="c1"># select * from test;</span>
+id <span class="p">|</span>                        name
+----+----------------------------------------------------
+<span class="m">1</span> <span class="p">|</span> bingo
+<span class="o">(</span><span class="m">1</span> row<span class="o">)</span>
+
+<span class="nv">postgres</span><span class="o">=</span>#</code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>check data in slave.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">postgres</span><span class="o">=</span><span class="c1"># select * from test;</span>
+id <span class="p">|</span>                        name
+----+----------------------------------------------------
+<span class="m">1</span> <span class="p">|</span> bingo
+<span class="o">(</span><span class="m">1</span> row<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div></li>
+
+<li><p>如果在slave上做写操作将会失败。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nv">postgres</span><span class="o">=</span><span class="c1">#  insert into test (id,name) values (1,&#39;bingo&#39;);</span>
+ERROR:  cannot execute INSERT in a read-only transaction</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">wxdlong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-11-16
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        
+        <a class="next" href="https://ycat.top/post/ycat/">
+            <span class="next-text nav-default">YCAT Yokohama City Air Terminal</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wxdlong@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://space.bilibili.com/315809381" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ycat.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wxdlong</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ycat.top/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145441669-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?3ef5015c99fc627775245d23d20d25b1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>5gs on Even - A super concise theme for Hugo</title>
+    <link>https://ycat.top/5g/</link>
+    <description>Recent content in 5gs on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Dec 2020 21:43:40 +0800</lastBuildDate>
+    
+	<atom:link href="https://ycat.top/5g/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>理解5G RNTI</title>
+      <link>https://ycat.top/5g/rnti/</link>
+      <pubDate>Thu, 17 Dec 2020 21:43:40 +0800</pubDate>
+      
+      <guid>https://ycat.top/5g/rnti/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;大成若缺，其用不弊。大盈若冲，其用不穷。大直若刷，大巧若拙，大辩若讷。静胜躁，寒胜热。清静为天下正。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;RNTI, Radio Network Temporary Identifier, 是一种标识，两类用途：用于加扰DCI的CRC,UE只有使用正确的RNTI才能对接收到的消息解码；基站用于识别UE,UE发送的RRCmessage会携带自己专用的RNTI值。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>5G 基础概念!</title>
+      <link>https://ycat.top/5g/concept/</link>
+      <pubDate>Tue, 04 Aug 2020 20:34:42 +0800</pubDate>
+      
+      <guid>https://ycat.top/5g/concept/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://www.jianshu.com/p/f9c013ac8eff&#34;&gt;https://www.jianshu.com/p/f9c013ac8eff&lt;/a&gt;
+&amp;gt;常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.&lt;br /&gt;
+5G缩写表&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

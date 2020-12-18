@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Bash 快捷键,提升命令行效率! - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wxdlong" /><meta name="description" content="bash key shortcut" /><meta name="keywords" content="Bash, key shortcut" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://ycat.top/linux/bash_key/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://ycat.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ycat.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ycat.top/favicon-16x16.png">
+<link rel="manifest" href="https://ycat.top/manifest.json">
+<link rel="mask-icon" href="https://ycat.top/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="https://ycat.top/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Bash 快捷键,提升命令行效率!" />
+<meta property="og:description" content="bash key shortcut" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ycat.top/linux/bash_key/" />
+<meta property="article:published_time" content="2019-09-21T18:34:42+08:00" />
+<meta property="article:modified_time" content="2019-09-21T18:34:42+08:00" />
+<meta itemprop="name" content="Bash 快捷键,提升命令行效率!">
+<meta itemprop="description" content="bash key shortcut">
+
+
+<meta itemprop="datePublished" content="2019-09-21T18:34:42&#43;08:00" />
+<meta itemprop="dateModified" content="2019-09-21T18:34:42&#43;08:00" />
+<meta itemprop="wordCount" content="828">
+
+
+
+<meta itemprop="keywords" content="shell," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Bash 快捷键,提升命令行效率!"/>
+<meta name="twitter:description" content="bash key shortcut"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://ycat.top/" class="logo">Wxdlong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://ycat.top/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://ycat.top/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://ycat.top/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://ycat.top/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://ycat.top/" class="logo">Wxdlong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+  <div class="post-content">
+    <blockquote>
+<p>常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.</p>
+</blockquote>
+
+<p><code>set -x</code>, Print commands and their arguments as they are executed.<br />
+<code>set -e</code>, Exit immediately if a command exits with a non-zero status.<br />
+<code>+-</code>, Using + rather than - causes these flags to be turned off.<br />
+<code>set -o</code>  ## 查看当前选项的设置状态<br />
+Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般是针对词的. 记住一些快捷键.让你的生活更愉快哟.</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wxdlong@wxdlong:~/code/github/gcc$ <span class="nb">set</span> -o
+allexport      	off
+braceexpand    	on
+emacs          	on
+errexit        	off
+errtrace       	off
+functrace      	off
+hashall        	on
+histexpand     	on
+<span class="nb">history</span>        	on
+ignoreeof      	off
+interactive-comments	on
+keyword        	off
+monitor        	on
+noclobber      	off
+noexec         	off
+noglob         	off
+nolog          	off
+notify         	off
+nounset        	off
+onecmd         	off
+physical       	off
+pipefail       	off
+posix          	off
+privileged     	off
+verbose        	off
+vi             	off
+xtrace         	off</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="移动光标">移动光标</h2>
+
+<p><code>Ctrl + a</code> ：移到命令行首<br />
+<code>Ctrl + e</code> ：移到命令行尾<br />
+Ctrl + f ：按字符前移（右向）<br />
+Ctrl + b ：按字符后移（左向）<br />
+<code>Alt + f</code> ：按单词前移（右向）<br />
+<code>Alt + b</code> ：按单词后移（左向）<br />
+Ctrl + xx：在命令行首和光标之间移动<br />
+<code>Ctrl + u</code> ：从光标处删除至命令行首<br />
+<code>Ctrl + k</code> ：从光标处删除至命令行尾<br />
+<code>Ctrl + w</code> ：从光标处删除至字首<br />
+<code>Alt + d</code> ：从光标处删除至字尾<br />
+Ctrl + d ：删除光标处的字符<br />
+Ctrl + h ：删除光标前的字符<br />
+Ctrl + y ：粘贴至光标后<br />
+Alt + c ：从光标处更改为首字母大写的单词<br />
+Alt + u ：从光标处更改为全部大写的单词<br />
+Alt + l ：从光标处更改为全部小写的单词<br />
+Ctrl + t ：交换光标处和之前的字符<br />
+Alt + t ：交换光标处和之前的单词<br />
+Alt + Backspace：与 Ctrl + w 相同类似，分隔符有些差别</p>
+
+<h2 id="执行命令">执行命令</h2>
+
+<p><code>Ctrl + r</code>：逆向搜索命令历史<br />
+Ctrl + g：从历史搜索模式退出<br />
+Ctrl + p：历史中的上一条命令<br />
+Ctrl + n：历史中的下一条命令<br />
+Alt + .：使用上一条命令的最后一个参数</p>
+
+<h2 id="控制命令">控制命令</h2>
+
+<p><code>Ctrl + l</code>：清屏<br />
+Ctrl + o：执行当前命令，并选择上一条命令<br />
+Ctrl + s：阻止屏幕输出<br />
+Ctrl + q：允许屏幕输出<br />
+Ctrl + c：终止命令<br />
+Ctrl + z：挂起命令</p>
+
+<h2 id="bang-命令">Bang (!) 命令</h2>
+
+<p>!!： 执行上一条命令<br />
+!blah： 执行最近的以 blah 开头的命令，如 !ls<br />
+!blah:p： 仅打印输出，而不执行<br />
+!$： 上一条命令的最后一个参数，与 Alt + . 相同<br />
+!$:p： 打印输出 !$ 的内容<br />
+!<em>： 上一条命令的所有参数<br />
+!</em>:p： 打印输出 !* 的内容<br />
+^blah： 删除上一条命令中的 blah<br />
+^blah^foo： 将上一条命令中的 blah 替换为 foo<br />
+^blah^foo^： 将上一条命令中所有的 blah 都替换为 foo</p>
+  </div>
+</article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wxdlong@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://space.bilibili.com/315809381" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ycat.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wxdlong</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ycat.top/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145441669-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?3ef5015c99fc627775245d23d20d25b1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Top 命令高级用法实例 - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wxdlong" /><meta name="description" content=" 监控linux系统状态命令,CPU MEM
+ 　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。
+　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.
+" /><meta name="keywords" content="top, linux命令" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://ycat.top/post/top/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://ycat.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ycat.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ycat.top/favicon-16x16.png">
+<link rel="manifest" href="https://ycat.top/manifest.json">
+<link rel="mask-icon" href="https://ycat.top/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="https://ycat.top/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Top 命令高级用法实例" />
+<meta property="og:description" content="
+监控linux系统状态命令,CPU MEM
+
+
+　　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。
+
+　　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ycat.top/post/top/" />
+<meta property="article:published_time" content="2018-12-24T10:31:14+08:00" />
+<meta property="article:modified_time" content="2018-12-24T10:31:14+08:00" />
+<meta itemprop="name" content="Top 命令高级用法实例">
+<meta itemprop="description" content="
+监控linux系统状态命令,CPU MEM
+
+
+　　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。
+
+　　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.">
+
+
+<meta itemprop="datePublished" content="2018-12-24T10:31:14&#43;08:00" />
+<meta itemprop="dateModified" content="2018-12-24T10:31:14&#43;08:00" />
+<meta itemprop="wordCount" content="1733">
+
+
+
+<meta itemprop="keywords" content="shell," />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Top 命令高级用法实例"/>
+<meta name="twitter:description" content="
+监控linux系统状态命令,CPU MEM
+
+
+　　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。
+
+　　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定."/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://ycat.top/" class="logo">Wxdlong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://ycat.top/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://ycat.top/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://ycat.top/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://ycat.top/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://ycat.top/" class="logo">Wxdlong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Top 命令高级用法实例</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-12-24 </span>
+        <div class="post-category">
+            <a href="https://ycat.top/categories/linux/"> linux </a>
+            </div>
+          <span class="more-meta"> 1733 words </span>
+          <span class="more-meta"> 4 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#多核cpu监控">多核CPU监控</a></li>
+<li><a href="#进程字段排序">进程字段排序</a></li>
+<li><a href="#彩色显示">彩色显示</a></li>
+<li><a href="#改变进程显示列">改变进程显示列</a></li>
+<li><a href="#帮助">帮助</a></li>
+</ul></li>
+</ul>
+</nav>
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>监控linux系统状态命令,CPU MEM</p>
+</blockquote>
+
+<p>　　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。</p>
+
+<p>　　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.</p>
+
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">top - <span class="m">09</span>:09:50 up <span class="m">21</span>:38,  <span class="m">0</span> users,  load average: <span class="m">1</span>.37, <span class="m">1</span>.02, <span class="m">0</span>.83
+Tasks:  <span class="m">17</span> total,   <span class="m">2</span> running,  <span class="m">15</span> sleeping,   <span class="m">0</span> stopped,   <span class="m">0</span> zombie
+Cpu<span class="o">(</span>s<span class="o">)</span>: <span class="m">25</span>.9%us,  <span class="m">1</span>.9%sy,  <span class="m">0</span>.0%ni, <span class="m">71</span>.3%id,  <span class="m">0</span>.4%wa,  <span class="m">0</span>.0%hi,  <span class="m">0</span>.4%si,  <span class="m">0</span>.0%st
+Mem:   8907600k total,  7265328k used,  1642272k free,   244412k buffers
+Swap:  2097148k total,        0k used,  2097148k free,  5089264k cached
+
+  PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND
+ <span class="m">1743</span> root      <span class="m">20</span>   <span class="m">0</span>  <span class="m">7400</span>  <span class="m">468</span>  <span class="m">404</span> R <span class="m">100</span>.0  <span class="m">0</span>.0   <span class="m">4</span>:49.80 md5sum /dev/zero
+    <span class="m">1</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">11360</span> <span class="m">2380</span> <span class="m">2164</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.01 /bin/bash /usr/local/bin/docker-entrypoint.sh
+   <span class="m">93</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">66752</span> <span class="m">5968</span> <span class="m">5212</span> S  <span class="m">0</span>.0  <span class="m">0</span>.1   <span class="m">0</span>:00.01 /usr/sbin/sshd -D
+   <span class="m">94</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">14784</span> <span class="m">3124</span> <span class="m">2744</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.01 bash
+  <span class="m">192</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">14784</span> <span class="m">3016</span> <span class="m">2752</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.01 bash
+  <span class="m">209</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">47836</span> <span class="m">3320</span> <span class="m">2968</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.00 su - postgres
+  <span class="m">210</span> postgres  <span class="m">20</span>   <span class="m">0</span> <span class="m">14780</span> <span class="m">3068</span> <span class="m">2708</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.01 -bash
+ <span class="m">1185</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">14784</span> <span class="m">3120</span> <span class="m">2724</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.14 bash
+ <span class="m">1377</span> postgres  <span class="m">20</span>   <span class="m">0</span>  227m  19m  18m S  <span class="m">0</span>.0  <span class="m">0</span>.2   <span class="m">0</span>:00.15 /usr/pgsql-9.6/bin/postgres
+ <span class="m">1378</span> postgres  <span class="m">20</span>   <span class="m">0</span> <span class="m">85356</span> <span class="m">3828</span> <span class="m">2748</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.00 postgres: logger process
+ <span class="m">1380</span> postgres  <span class="m">20</span>   <span class="m">0</span>  227m <span class="m">6536</span> <span class="m">5412</span> S  <span class="m">0</span>.0  <span class="m">0</span>.1   <span class="m">0</span>:00.04 postgres: checkpointer process
+ <span class="m">1381</span> postgres  <span class="m">20</span>   <span class="m">0</span>  227m <span class="m">4356</span> <span class="m">3252</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.17 postgres: writer process
+ <span class="m">1382</span> postgres  <span class="m">20</span>   <span class="m">0</span>  227m <span class="m">9404</span> <span class="m">8288</span> S  <span class="m">0</span>.0  <span class="m">0</span>.1   <span class="m">0</span>:00.34 postgres: wal writer process
+ <span class="m">1383</span> postgres  <span class="m">20</span>   <span class="m">0</span>  227m <span class="m">7280</span> <span class="m">5928</span> S  <span class="m">0</span>.0  <span class="m">0</span>.1   <span class="m">0</span>:00.11 postgres: autovacuum launcher process
+ <span class="m">1384</span> postgres  <span class="m">20</span>   <span class="m">0</span> <span class="m">87456</span> <span class="m">3788</span> <span class="m">2684</span> S  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.02 postgres: archiver process
+ <span class="m">1385</span> postgres  <span class="m">20</span>   <span class="m">0</span> <span class="m">87600</span> <span class="m">4796</span> <span class="m">3640</span> S  <span class="m">0</span>.0  <span class="m">0</span>.1   <span class="m">0</span>:00.20 postgres: stats collector process
+ <span class="m">1741</span> root      <span class="m">20</span>   <span class="m">0</span> <span class="m">14952</span> <span class="m">2028</span> <span class="m">1800</span> R  <span class="m">0</span>.0  <span class="m">0</span>.0   <span class="m">0</span>:00.12 top</code></pre></td></tr></table>
+</div>
+</div>
+<ol>
+<li><p>第一行 <code>top - 09:09:50 up 21:38,  0 users,  load average: 1.37, 1.02, 0.83</code><br />
+top - 当前时间,系统运行时间,多少个用户登陆,1,5,15分钟平均负载</p></li>
+
+<li><p>第二行 <code>Tasks:  17 total,   2 running,  15 sleeping,   0 stopped,   0 zombie</code><br />
+任务数： 总共数，运行数，休眠数，停止数，僵尸数</p></li>
+
+<li><p>第三行，<code>Cpu(s): 25.9%us,  1.9%sy,  0.0%ni, 71.3%id,  0.4%wa,  0.0%hi,  0.4%si,  0.0%st</code><br />
+CPU:  用户空间占用CPU的百分比<br />
+     内核空间占用CPU的百分比<br />
+     改变过优先级的进程占用CPU的百分比<br />
+     空闲CPU百分比<br />
+     IO等待占用CPU的百分比<br />
+    硬中断（Hardware IRQ）占用CPU的百分比<br />
+    软中断（Software Interrupts）占用CPU的百分比</p></li>
+
+<li><p>第四行 <code>Mem:   8907600k total,  7265328k used,  1642272k free,   244412k buffers</code>
+内存： 总内存量， 使用量， 空闲数， 缓存量</p></li>
+
+<li><p>第五行 <code>Swap:  2097148k total,        0k used,  2097148k free,  5089264k cached</code>
+交换内存： 总量， 用量， 空闲数, 缓存量</p></li>
+
+<li><p>第六行 <code>PID USER      PR  NI  VIRT  RES  SHR S %CPU %MEM    TIME+  COMMAND</code><br />
+进程，<br />
+所属用户，<br />
+优先级，<br />
+nice值， 负值表示高优先级，正值表示低优先级<br />
+VIRT — 进程使用的虚拟内存总量，单位kb。VIRT=SWAP+RES<br />
+RES — 进程使用的、未被换出的物理内存大小，单位kb。RES=CODE+DATA
+SHR — 共享内存大小，单位kb<br />
+S — 进程状态。D=不可中断的睡眠状态 R=运行 S=睡眠 T=跟踪/停止 Z=僵尸进程
+%CPU — 上次更新到现在的CPU时间占用百分比<br />
+%MEM — 进程使用的物理内存百分比<br />
+TIME+ — 进程使用的CPU时间总计，单位1/100秒<br />
+COMMAND — 进程名称（命令名/命令行）</p></li>
+</ol>
+
+<h2 id="多核cpu监控">多核CPU监控</h2>
+
+<blockquote>
+<p>在top基本视图中，按键盘数字“1”，可监控每个逻辑CPU的状况</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">   top - <span class="m">09</span>:48:36 up <span class="m">22</span>:17,  <span class="m">0</span> users,  load average: <span class="m">0</span>.55, <span class="m">0</span>.50, <span class="m">0</span>.90
+Tasks:  <span class="m">16</span> total,   <span class="m">1</span> running,  <span class="m">15</span> sleeping,   <span class="m">0</span> stopped,   <span class="m">0</span> zombie
+Cpu0  :  <span class="m">0</span>.7%us,  <span class="m">1</span>.0%sy,  <span class="m">0</span>.0%ni, <span class="m">97</span>.6%id,  <span class="m">0</span>.7%wa,  <span class="m">0</span>.0%hi,  <span class="m">0</span>.0%si,  <span class="m">0</span>.0%st
+Cpu1  :  <span class="m">0</span>.7%us,  <span class="m">1</span>.4%sy,  <span class="m">0</span>.0%ni, <span class="m">97</span>.6%id,  <span class="m">0</span>.3%wa,  <span class="m">0</span>.0%hi,  <span class="m">0</span>.0%si,  <span class="m">0</span>.0%st
+Cpu2  :  <span class="m">4</span>.0%us,  <span class="m">3</span>.7%sy,  <span class="m">0</span>.0%ni, <span class="m">91</span>.9%id,  <span class="m">0</span>.0%wa,  <span class="m">0</span>.0%hi,  <span class="m">0</span>.3%si,  <span class="m">0</span>.0%st
+Cpu3  :  <span class="m">1</span>.3%us,  <span class="m">1</span>.0%sy,  <span class="m">0</span>.0%ni, <span class="m">97</span>.3%id,  <span class="m">0</span>.0%wa,  <span class="m">0</span>.0%hi,  <span class="m">0</span>.3%si,  <span class="m">0</span>.0%st</code></pre></td></tr></table>
+</div>
+</div></blockquote>
+
+<h2 id="进程字段排序">进程字段排序</h2>
+
+<blockquote>
+<p>默认以CPUh占用量来排序
+1. 按<code>b</code> 打开关闭加粗效果
+2. 按<code>x</code> 打开排序列的高亮
+3. 按<code>shift+&gt; , shift+&lt;</code> 可以向右，向左改变排序列。</p>
+</blockquote>
+
+<h2 id="彩色显示">彩色显示</h2>
+
+<blockquote>
+<p>按<code>z</code></p>
+</blockquote>
+
+<h2 id="改变进程显示列">改变进程显示列</h2>
+
+<blockquote>
+<p>按<code>f</code> 编辑显示列,下面是所有可显示列名</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Current Fields:  AEHIOQTWKNMbcdfgjplRSuvyzX  <span class="k">for</span> window <span class="m">1</span>:Def
+Toggle fields via field letter, <span class="nb">type</span> any other key to <span class="k">return</span>
+
+* A: <span class="nv">PID</span>        <span class="o">=</span> Process Id
+* E: <span class="nv">USER</span>       <span class="o">=</span> User Name
+* H: <span class="nv">PR</span>         <span class="o">=</span> Priority
+* I: <span class="nv">NI</span>         <span class="o">=</span> Nice value
+* O: <span class="nv">VIRT</span>       <span class="o">=</span> Virtual Image <span class="o">(</span>kb<span class="o">)</span>
+* Q: <span class="nv">RES</span>        <span class="o">=</span> Resident size <span class="o">(</span>kb<span class="o">)</span>
+* T: <span class="nv">SHR</span>        <span class="o">=</span> Shared Mem size <span class="o">(</span>kb<span class="o">)</span>
+* W: <span class="nv">S</span>          <span class="o">=</span> Process Status
+* K: %CPU       <span class="o">=</span> CPU usage
+* N: %MEM       <span class="o">=</span> Memory usage <span class="o">(</span>RES<span class="o">)</span>
+* M: TIME+      <span class="o">=</span> CPU Time, hundredths
+  b: <span class="nv">PPID</span>       <span class="o">=</span> Parent Process Pid
+  c: <span class="nv">RUSER</span>      <span class="o">=</span> Real user name
+  d: <span class="nv">UID</span>        <span class="o">=</span> User Id
+  f: <span class="nv">GROUP</span>      <span class="o">=</span> Group Name
+  g: <span class="nv">TTY</span>        <span class="o">=</span> Controlling Tty
+  j: <span class="nv">P</span>          <span class="o">=</span> Last used cpu <span class="o">(</span>SMP<span class="o">)</span>
+  p: <span class="nv">SWAP</span>       <span class="o">=</span> Swapped size <span class="o">(</span>kb<span class="o">)</span>
+  l: <span class="nv">TIME</span>       <span class="o">=</span> CPU Time
+* R: <span class="nv">CODE</span>       <span class="o">=</span> Code size <span class="o">(</span>kb<span class="o">)</span>
+* S: <span class="nv">DATA</span>       <span class="o">=</span> Data+Stack size <span class="o">(</span>kb<span class="o">)</span>
+  u: <span class="nv">nFLT</span>       <span class="o">=</span> Page Fault count
+  v: <span class="nv">nDRT</span>       <span class="o">=</span> Dirty Pages count
+  y: <span class="nv">WCHAN</span>      <span class="o">=</span> Sleeping in Function
+  z: <span class="nv">Flags</span>      <span class="o">=</span> Task Flags &lt;sched.h&gt;
+* X: <span class="nv">COMMAND</span>    <span class="o">=</span> Command name/line</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="帮助">帮助</h2>
+
+<blockquote>
+<p>按h</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">Help <span class="k">for</span> Interactive Commands - procps version <span class="m">3</span>.2.8
+Window <span class="m">1</span>:Def: Cumulative mode On.  System: Delay <span class="m">3</span>.0 secs<span class="p">;</span> Secure mode Off.
+
+  Z,B       Global: <span class="s1">&#39;Z&#39;</span> change color mappings<span class="p">;</span> <span class="s1">&#39;B&#39;</span> disable/enable bold
+  l,t,m     Toggle Summaries: <span class="s1">&#39;l&#39;</span> load avg<span class="p">;</span> <span class="s1">&#39;t&#39;</span> task/cpu stats<span class="p">;</span> <span class="s1">&#39;m&#39;</span> mem info
+  <span class="m">1</span>,I       Toggle SMP view: <span class="s1">&#39;1&#39;</span> single/separate states<span class="p">;</span> <span class="s1">&#39;I&#39;</span> Irix/Solaris mode
+
+  f,o     . Fields/Columns: <span class="s1">&#39;f&#39;</span> add or remove<span class="p">;</span> <span class="s1">&#39;o&#39;</span> change display order
+  F or O  . Select sort field
+  &lt;,&gt;     . Move sort field: <span class="s1">&#39;&lt;&#39;</span> next col left<span class="p">;</span> <span class="s1">&#39;&gt;&#39;</span> next col right
+  R,H     . Toggle: <span class="s1">&#39;R&#39;</span> normal/reverse sort<span class="p">;</span> <span class="s1">&#39;H&#39;</span> show threads
+  c,i,S   . Toggle: <span class="s1">&#39;c&#39;</span> cmd name/line<span class="p">;</span> <span class="s1">&#39;i&#39;</span> idle tasks<span class="p">;</span> <span class="s1">&#39;S&#39;</span> cumulative <span class="nb">time</span>
+  x,y     . Toggle highlights: <span class="s1">&#39;x&#39;</span> sort field<span class="p">;</span> <span class="s1">&#39;y&#39;</span> running tasks
+  z,b     . Toggle: <span class="s1">&#39;z&#39;</span> color/mono<span class="p">;</span> <span class="s1">&#39;b&#39;</span> bold/reverse <span class="o">(</span>only <span class="k">if</span> <span class="s1">&#39;x&#39;</span> or <span class="s1">&#39;y&#39;</span><span class="o">)</span>
+  u       . Show specific user only
+  n or <span class="c1">#  . Set maximum tasks displayed</span>
+
+  k,r       Manipulate tasks: <span class="s1">&#39;k&#39;</span> kill<span class="p">;</span> <span class="s1">&#39;r&#39;</span> renice
+  d or s    Set update interval
+  W         Write configuration file
+  q         Quit
+          <span class="o">(</span> commands shown with <span class="s1">&#39;.&#39;</span> require a visible task display window <span class="o">)</span>
+Press <span class="s1">&#39;h&#39;</span> or <span class="s1">&#39;?&#39;</span> <span class="k">for</span> <span class="nb">help</span> with Windows,</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">wxdlong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2018-12-24
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      <div class="post-tags">
+          <a href="https://ycat.top/tags/shell/">shell</a>
+          </div>
+      <nav class="post-nav">
+        <a class="prev" href="https://ycat.top/post/618/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">618</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="https://ycat.top/post/sed/">
+            <span class="next-text nav-default">Sed 命令高级用法实例</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wxdlong@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://space.bilibili.com/315809381" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ycat.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wxdlong</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ycat.top/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145441669-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?3ef5015c99fc627775245d23d20d25b1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

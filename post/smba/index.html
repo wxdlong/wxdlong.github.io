@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Linux connect to Smba - Even - A super concise theme for Hugo</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="wxdlong" /><meta name="description" content=" 天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形， 高下相轻，音声相和，前后相随。
+ How to connect to smba in Linux? Let&amp;rsquo;s begin.
+smbclient -L //{IP} -U {userName}, and you can see the shareName is Chainedbox
+1 2 3 4 5 6 7 8 9  wxdlong@wxdlong:~$ smbclient -L //192.168.31.166 -U yhtx WARNING: The &amp;#34;syslog&amp;#34; option is deprecated Enter yhtx&amp;#39;s password: Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.5.22] Sharename Type Comment --------- ---- ------- Chainedbox Disk Android /mnt/sdcard IPC$ IPC IPC Service (Samba on Android)  " /><meta name="keywords" content="linux, smba" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.59.0-DEV with even 4.0.0" />
+
+
+<link rel="canonical" href="https://ycat.top/post/smba/" />
+<link rel="apple-touch-icon" sizes="180x180" href="https://ycat.top/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ycat.top/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ycat.top/favicon-16x16.png">
+<link rel="manifest" href="https://ycat.top/manifest.json">
+<link rel="mask-icon" href="https://ycat.top/safari-pinned-tab.svg" color="#5bbad5">
+
+
+<link href="https://ycat.top/dist/even.c2a46f00.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css" integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin="anonymous">
+
+
+<meta property="og:title" content="Linux connect to Smba" />
+<meta property="og:description" content="
+天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形，
+高下相轻，音声相和，前后相随。
+
+
+How to connect to smba in Linux? Let&rsquo;s begin.
+
+smbclient -L //{IP} -U {userName}, and you can see the shareName is Chainedbox
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+wxdlong@wxdlong:~$ smbclient -L //192.168.31.166 -U yhtx
+WARNING: The &#34;syslog&#34; option is deprecated
+Enter yhtx&#39;s password: 
+Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.5.22]
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Chainedbox      Disk      Android /mnt/sdcard
+	IPC$            IPC       IPC Service (Samba on Android)
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ycat.top/post/smba/" />
+<meta property="article:published_time" content="2019-09-08T10:49:34+00:00" />
+<meta property="article:modified_time" content="2019-09-08T10:49:34+00:00" />
+<meta itemprop="name" content="Linux connect to Smba">
+<meta itemprop="description" content="
+天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形，
+高下相轻，音声相和，前后相随。
+
+
+How to connect to smba in Linux? Let&rsquo;s begin.
+
+smbclient -L //{IP} -U {userName}, and you can see the shareName is Chainedbox
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+wxdlong@wxdlong:~$ smbclient -L //192.168.31.166 -U yhtx
+WARNING: The &#34;syslog&#34; option is deprecated
+Enter yhtx&#39;s password: 
+Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.5.22]
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Chainedbox      Disk      Android /mnt/sdcard
+	IPC$            IPC       IPC Service (Samba on Android)
+
+">
+
+
+<meta itemprop="datePublished" content="2019-09-08T10:49:34&#43;00:00" />
+<meta itemprop="dateModified" content="2019-09-08T10:49:34&#43;00:00" />
+<meta itemprop="wordCount" content="674">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Linux connect to Smba"/>
+<meta name="twitter:description" content="
+天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形，
+高下相轻，音声相和，前后相随。
+
+
+How to connect to smba in Linux? Let&rsquo;s begin.
+
+smbclient -L //{IP} -U {userName}, and you can see the shareName is Chainedbox
+
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+
+wxdlong@wxdlong:~$ smbclient -L //192.168.31.166 -U yhtx
+WARNING: The &#34;syslog&#34; option is deprecated
+Enter yhtx&#39;s password: 
+Domain=[WORKGROUP] OS=[Unix] Server=[Samba 3.5.22]
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Chainedbox      Disk      Android /mnt/sdcard
+	IPC$            IPC       IPC Service (Samba on Android)
+
+"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="https://ycat.top/" class="logo">Wxdlong</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="https://ycat.top/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="https://ycat.top/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="https://ycat.top/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="https://ycat.top/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="https://ycat.top/" class="logo">Wxdlong</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="https://ycat.top/categories/">Categories</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">Linux connect to Smba</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2019-09-08 </span>
+        
+          <span class="more-meta"> 674 words </span>
+          <span class="more-meta"> 2 mins read </span>
+        
+      </div>
+    </header>
+
+    <div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+    <div class="post-content">
+      <blockquote>
+<p>天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形，
+高下相轻，音声相和，前后相随。</p>
+</blockquote>
+
+<p>How to connect to smba in Linux? Let&rsquo;s begin.</p>
+
+<p><code>smbclient -L //{IP} -U {userName}</code>, and you can see the shareName is <code>Chainedbox</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wxdlong@wxdlong:~$ smbclient -L //192.168.31.166 -U yhtx
+WARNING: The <span class="s2">&#34;syslog&#34;</span> option is deprecated
+Enter yhtx<span class="err">&#39;</span>s password: 
+<span class="nv">Domain</span><span class="o">=[</span>WORKGROUP<span class="o">]</span> <span class="nv">OS</span><span class="o">=[</span>Unix<span class="o">]</span> <span class="nv">Server</span><span class="o">=[</span>Samba <span class="m">3</span>.5.22<span class="o">]</span>
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Chainedbox      Disk      Android /mnt/sdcard
+	IPC$            IPC       IPC Service <span class="o">(</span>Samba on Android<span class="o">)</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Login in to smba <code>smbclient //{IP}/Chainedbox -U {username}</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">smbclient //192.168.31.166/Chainedbox -U yhtx
+WARNING: The <span class="s2">&#34;syslog&#34;</span> option is deprecated
+Enter yhtx<span class="err">&#39;</span>s password: 
+<span class="nv">Domain</span><span class="o">=[</span>WORKGROUP<span class="o">]</span> <span class="nv">OS</span><span class="o">=[</span>Unix<span class="o">]</span> <span class="nv">Server</span><span class="o">=[</span>Samba <span class="m">3</span>.5.22<span class="o">]</span>
+smb: <span class="se">\&gt;</span> ls
+  .                                   D        <span class="m">0</span>  Sun Sep  <span class="m">8</span> <span class="m">05</span>:03:11 <span class="m">2019</span>
+  ..                                  D        <span class="m">0</span>  Thu Jan  <span class="m">1</span> <span class="m">08</span>:00:23 <span class="m">1970</span>
+  USB_DISK0                           D        <span class="m">0</span>  Sun Sep  <span class="m">8</span> <span class="m">09</span>:46:31 <span class="m">2019</span>
+
+		<span class="m">5143924</span> blocks of size <span class="m">1024</span>. <span class="m">1312152</span> blocks available</code></pre></td></tr></table>
+</div>
+</div>
+<p>smba commands</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">smb: <span class="se">\&gt;</span> <span class="nb">help</span>
+?              allinfo        altname        archive        backup         
+blocksize      cancel         case_sensitive <span class="nb">cd</span>             chmod          
+chown          close          del            dir            du             
+<span class="nb">echo</span>           <span class="nb">exit</span>           get            getfacl        geteas         
+hardlink       <span class="nb">help</span>           <span class="nb">history</span>        iosize         lcd            
+link           lock           lowercase      ls             l              
+mask           md             mget           mkdir          more           
+mput           newer          notify         open           posix          
+posix_encrypt  posix_open     posix_mkdir    posix_rmdir    posix_unlink   
+posix_whoami   print          prompt         put            <span class="nb">pwd</span>            
+q              queue          quit           readlink       rd             
+recurse        reget          rename         reput          rm             
+rmdir          showacls       setea          setmode        scopy          
+stat           symlink        tar            tarmode        timeout        
+translate      unlock         volume         vuid           wdel           
+logon          listconnect    showconnect    tcon           tdis           
+tid            logoff         ..             !  </code></pre></td></tr></table>
+</div>
+</div>
+<p>Install <code>apt-get install cifs-utils</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">wxdlong@wxdlong:~$ sudo apt-get install cifs-utils
+<span class="o">[</span>sudo<span class="o">]</span> wxdlong 的密码：
+正在读取软件包列表... 完成
+正在分析软件包的依赖关系树       
+正在读取状态信息... 完成       
+建议安装：
+  keyutils winbind
+下列【新】软件包将被安装：
+  cifs-utils
+升级了 <span class="m">0</span> 个软件包，新安装了 <span class="m">1</span> 个软件包，要卸载 <span class="m">0</span> 个软件包，有 <span class="m">15</span> 个软件包未被升级。
+需要下载 <span class="m">75</span>.8 kB 的归档。
+解压缩后会消耗 <span class="m">236</span> kB 的额外空间。
+获取:1 http://packages.deepin.com/deepin lion/main amd64 cifs-utils amd64 <span class="m">2</span>:6.7-1 <span class="o">[</span><span class="m">75</span>.8 kB<span class="o">]</span>
+已下载 <span class="m">75</span>.8 kB，耗时 9秒 <span class="o">(</span><span class="m">7</span>,659 B/s<span class="o">)</span>                                                                                   
+正在选中未选择的软件包 cifs-utils。
+<span class="o">(</span>正在读取数据库 ... 系统当前共安装有 <span class="m">190299</span> 个文件和目录。<span class="o">)</span>
+正准备解包 .../cifs-utils_2%3a6.7-1_amd64.deb  ...
+正在解包 cifs-utils <span class="o">(</span><span class="m">2</span>:6.7-1<span class="o">)</span> ...
+正在设置 cifs-utils <span class="o">(</span><span class="m">2</span>:6.7-1<span class="o">)</span> ...
+update-alternatives: 使用 /usr/lib/x86_64-linux-gnu/cifs-utils/idmapwb.so 来在自动模式中提供 /etc/cifs-utils/idmap-plugin <span class="o">(</span>idmap-plugin<span class="o">)</span>
+正在处理用于 man-db <span class="o">(</span><span class="m">2</span>.7.6.1-2<span class="o">)</span> 的触发器 ...</code></pre></td></tr></table>
+</div>
+</div>
+<p>mount to /mnt <code>sudo mount -t cifs //{IP}/{shareName} -o username={userName},password={password},vers=${version} /{mountPoint}</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">sudo mount -t cifs //192.168.31.166/Chainedbox -o <span class="nv">username</span><span class="o">=</span>yhtx,password<span class="o">=</span><span class="m">5913</span>,vers<span class="o">=</span><span class="m">1</span>.0 /mnt</code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>If not identify version(<code>vers=1.0</code>), may be <code>mount error(112): Host is down</code></p>
+</blockquote>
+
+<p>mount at boot  <code>//{IP}/{ShareName}   /{mountPoint}   cifs  credentials=/etc/samba/user.cred 0 0</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="nb">echo</span> <span class="s2">&#34;//192.168.31.166/Chainedbox                     /mnt            cifs            credentials=/etc/samba/user.cred 0 0&#34;</span> &gt;&gt; /etc/fstab</code></pre></td></tr></table>
+</div>
+</div>
+<p>create <code>user.cred</code> like below</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">root@wxdlong:/mnt# vi /etc/samba/user.cred
+root@wxdlong:/mnt# cat /etc/samba/user.cred
+<span class="nv">username</span><span class="o">=</span>yhtx
+<span class="nv">password</span><span class="o">=</span><span class="m">5913</span></code></pre></td></tr></table>
+</div>
+</div>
+<p><code>chmod 600</code>to the file <code>user.cred</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-bash" data-lang="bash">root@wxdlong:/mnt# chmod <span class="m">600</span> /etc/samba/user.cred 
+root@wxdlong:/mnt# ls -lth /etc/samba/user.cred 
+-rw------- <span class="m">1</span> root root <span class="m">29</span> Sep  <span class="m">8</span> <span class="m">19</span>:08 /etc/samba/user.cred</code></pre></td></tr></table>
+</div>
+</div>
+    </div>
+
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">wxdlong</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">
+        2019-09-08
+        
+    </span>
+  </p>
+  
+  
+</div>
+<footer class="post-footer">
+      
+      <nav class="post-nav">
+        <a class="prev" href="https://ycat.top/post/helloaction/">
+            <i class="iconfont icon-left"></i>
+            <span class="prev-text nav-default">Hello Action</span>
+            <span class="prev-text nav-mobile">Prev</span>
+          </a>
+        <a class="next" href="https://ycat.top/post/dockerindocker/">
+            <span class="next-text nav-default">Docker In Docker</span>
+            <span class="next-text nav-mobile">Next</span>
+            <i class="iconfont icon-right"></i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+  
+
+  
+
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:wxdlong@qq.com" class="iconfont icon-email" title="email"></a>
+      <a href="https://space.bilibili.com/315809381" class="iconfont icon-bilibili" title="bilibili"></a>
+  <a href="https://ycat.top/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    2017 - 
+    2020
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">wxdlong</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js" integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js" integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="https://ycat.top/dist/even.26188efa.min.js"></script>
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-145441669-1', 'auto');
+	ga('set', 'anonymizeIp', true);
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<script id="baidu_analytics">
+  var _hmt = _hmt || [];
+  (function() {
+    if (window.location.hostname === 'localhost') return;
+    var hm = document.createElement("script"); hm.async = true;
+    hm.src = "https://hm.baidu.com/hm.js?3ef5015c99fc627775245d23d20d25b1";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+  })();
+</script>
+
+
+
+
+
+
+</body>
+</html>

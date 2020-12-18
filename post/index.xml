@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Even - A super concise theme for Hugo</title>
+    <link>https://ycat.top/post/</link>
+    <description>Recent content in Posts on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 16 Nov 2019 21:29:48 +0800</lastBuildDate>
+    
+	<atom:link href="https://ycat.top/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Replication Postgres Docker</title>
+      <link>https://ycat.top/post/pgdocker/</link>
+      <pubDate>Sat, 16 Nov 2019 21:29:48 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/pgdocker/</guid>
+      <description>&lt;h1 id=&#34;用法&#34;&gt;用法&lt;/h1&gt;
+
+&lt;p&gt;全自动配置主从replication模式postgres&lt;/p&gt;
+
+&lt;p&gt;docker-compose up -d&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wxd@long:~/Code/github$ docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                     NAMES
+7f75e44e0be2        pgcluster:9.6.9     &lt;span class=&#34;s2&#34;&gt;&amp;#34;docker-entrypoint.sh&amp;#34;&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; minutes ago      Up &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; minutes       &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;.0.0.0:32771-&amp;gt;5432/tcp   pgslave
+14abdfa31875        pgcluster:9.6.9     &lt;span class=&#34;s2&#34;&gt;&amp;#34;docker-entrypoint.sh&amp;#34;&lt;/span&gt;   &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; minutes ago      Up &lt;span class=&#34;m&#34;&gt;18&lt;/span&gt; minutes       &lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;.0.0.0:32770-&amp;gt;5432/tcp   pgmaster&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>YCAT Yokohama City Air Terminal</title>
+      <link>https://ycat.top/post/ycat/</link>
+      <pubDate>Mon, 16 Sep 2019 05:28:57 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/ycat/</guid>
+      <description>&lt;p&gt;成田行きのバスは通常通り運行しています。成田空港(第2旅客ターミナル)まで85分の予定です。なお、所要時間の数値に関しましては、正確な時間をお約束するものではありません。&lt;/p&gt;
+
+&lt;p&gt;羽田行きのバスは通常通り運行しています。羽田空港(第1ターミナル)まで24分の予定です。なお、所要時間の数値に関しましては、正確な時間をお約束するものではありません。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Github Action of Docker研究</title>
+      <link>https://ycat.top/post/docker_action/</link>
+      <pubDate>Sun, 15 Sep 2019 00:28:57 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/docker_action/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;不尚贤,使民不争; 不贵难得之货,使民不为盗；不见可欲,使民心不乱.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;官方&lt;a href=&#34;https://help.github.com/cn/articles/creating-a-docker-container-action&#34;&gt;Docker Action&lt;/a&gt;教程创建了一个最基本的&lt;code&gt;Hello world&lt;/code&gt;脚本,并没有和Repo代码有任何交互. 但是如果是想要引用代码,引用Github环境变量怎么办?&lt;br /&gt;
+仔细看这个Docker运行日志. 有惊奇的发现.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;Run wxdlong/hello-action@v7
+/usr/bin/docker run --name df7dc7a61e20181bb466a9f0ee3e0ddc3e675_091ef4 --label 0df7dc --workdir /github/workspace --rm -e INPUT_WHO-TO-GREET -e HOME -e GITHUB_REF -e GITHUB_SHA -e GITHUB_REPOSITORY -e GITHUB_ACTOR -e GITHUB_WORKFLOW -e GITHUB_HEAD_REF -e GITHUB_BASE_REF -e GITHUB_EVENT_NAME -e GITHUB_WORKSPACE -e GITHUB_ACTION -e GITHUB_EVENT_PATH -e RUNNER_OS -e RUNNER_TOOL_CACHE -e RUNNER_TEMP -e RUNNER_WORKSPACE -v &lt;span class=&#34;s2&#34;&gt;&amp;#34;/var/run/docker.sock&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;/var/run/docker.sock&amp;#34;&lt;/span&gt; -v &lt;span class=&#34;s2&#34;&gt;&amp;#34;/home/runner/work/_temp/_github_home&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;/github/home&amp;#34;&lt;/span&gt; -v &lt;span class=&#34;s2&#34;&gt;&amp;#34;/home/runner/work/_temp/_github_workflow&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;/github/workflow&amp;#34;&lt;/span&gt; -v &lt;span class=&#34;s2&#34;&gt;&amp;#34;/home/runner/work/hello-action/hello-action&amp;#34;&lt;/span&gt;:&lt;span class=&#34;s2&#34;&gt;&amp;#34;/github/workspace&amp;#34;&lt;/span&gt; 0df7dc:7a61e20181bb466a9f0ee3e0ddc3e675  &lt;span class=&#34;s2&#34;&gt;&amp;#34;wxdlong&amp;#34;&lt;/span&gt;
+Hello wxdlong
+ ::set-output &lt;span class=&#34;nv&#34;&gt;name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;time::Sat Sep &lt;span class=&#34;m&#34;&gt;14&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;10&lt;/span&gt;:09:07 UTC &lt;span class=&#34;m&#34;&gt;2019&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>发布Action到Github市场!</title>
+      <link>https://ycat.top/post/publish_action_2market/</link>
+      <pubDate>Fri, 13 Sep 2019 10:49:34 +0000</pubDate>
+      
+      <guid>https://ycat.top/post/publish_action_2market/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;生而不有,为而不恃,功成而弗居. 无唯弗居,是以不去.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;独乐乐不如众乐乐, Github Action的一个创举, 共用!&lt;br /&gt;
+当你开发了一个好用的Action之后,可以发布到&lt;a href=&#34;https://github.com/marketplace?type=actions&#34;&gt;Github Action市场&lt;/a&gt;上以供千万人享用.实在是完美.&lt;br /&gt;
+看似简单的&lt;a href=&#34;!https://developer.github.com/marketplace/actions/publishing-an-action-in-the-github-marketplace/&#34;&gt;发布教程&lt;/a&gt;, 却用了近两天时间才搞定我的第一个Action- &lt;a href=&#34;https://github.com/marketplace/actions/hello-action&#34;&gt;Hello Action&lt;/a&gt;. 这里列出关键步骤.希望后来者能不要掉坑里.&lt;br /&gt;
+目前Action不需要审核,当你看到这张图时,说明己经成功!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://ycat.top/jpg/201908/actionViewonMarket.png&#34; alt=&#34;IO&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Hello Action</title>
+      <link>https://ycat.top/post/helloaction/</link>
+      <pubDate>Sun, 08 Sep 2019 10:49:34 +0000</pubDate>
+      
+      <guid>https://ycat.top/post/helloaction/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;是以圣人处无为之事,行不言之教,万物作焉而不辞.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;想必你之前听过&lt;a href=&#34;!https://travis-ci.org&#34;&gt;Travis&lt;/a&gt;,&lt;a href=&#34;!https://circleci.com/&#34;&gt;Circleci&lt;/a&gt;. 这些是三方免费CI(continous intergation)支持Github网站, 本网站现在一直是用travis自动发布的Blog. 现在Github终于有自己的CI工具(Action)了.现在来体验一波.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux connect to Smba</title>
+      <link>https://ycat.top/post/smba/</link>
+      <pubDate>Sun, 08 Sep 2019 10:49:34 +0000</pubDate>
+      
+      <guid>https://ycat.top/post/smba/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;天下皆知美之为美，斯恶己；皆知闰之为病，斯不美己。 故有无相生，难易相成， 长短相形，
+高下相轻，音声相和，前后相随。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;How to connect to smba in Linux? Let&amp;rsquo;s begin.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;smbclient -L //{IP} -U {userName}&lt;/code&gt;, and you can see the shareName is &lt;code&gt;Chainedbox&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;9
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;wxdlong@wxdlong:~$ smbclient -L //192.168.31.166 -U yhtx
+WARNING: The &lt;span class=&#34;s2&#34;&gt;&amp;#34;syslog&amp;#34;&lt;/span&gt; option is deprecated
+Enter yhtx&lt;span class=&#34;err&#34;&gt;&amp;#39;&lt;/span&gt;s password: 
+&lt;span class=&#34;nv&#34;&gt;Domain&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=[&lt;/span&gt;WORKGROUP&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;OS&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=[&lt;/span&gt;Unix&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;Server&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=[&lt;/span&gt;Samba &lt;span class=&#34;m&#34;&gt;3&lt;/span&gt;.5.22&lt;span class=&#34;o&#34;&gt;]&lt;/span&gt;
+
+	Sharename       Type      Comment
+	---------       ----      -------
+	Chainedbox      Disk      Android /mnt/sdcard
+	IPC$            IPC       IPC Service &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;Samba on Android&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Docker In Docker</title>
+      <link>https://ycat.top/post/dockerindocker/</link>
+      <pubDate>Sun, 25 Aug 2019 19:05:07 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/dockerindocker/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;是以圣人之治,虚其心, 实其腹,弱其志,强其骨.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Docker In Docker=在Docker Contanier里运行Docker? 有这样的需求？当然有，官方还专门有这样一个&lt;a href=&#34;!https://hub.docker.com/_/docker&#34;&gt;Docker Image&lt;/a&gt;. 可以用于编译测试Docker本身。&lt;/p&gt;
+
+&lt;p&gt;当然这个用法有点复杂。我们还可以当WSL用。有时候Windows中运行Docker,运行shell还不是很方便，所有一种简单的Docker In Docker环境就很有用了。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jconsole,Jvisualvm远程连接Wildfly</title>
+      <link>https://ycat.top/post/wildfly/</link>
+      <pubDate>Fri, 16 Aug 2019 22:43:28 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/wildfly/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;道可道，非常道！&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;　　Wildfly运行在远程机器上，想要调试性能问题怎么办？ 用JDK自带的Jconsole,JvisualVM连上去查看最方便不过了。
+不过单纯连是连不上的。必须要在ClassPath上加上Wildfly的一个jboss-cli-client.jar包，然后就能连上了。本人己经
+封装好一个&lt;a href=&#34;!https://cloud.docker.com/u/wxdlong/repository/docker/wxdlong/wildfly&#34;&gt;wildfly Docker container&lt;/a&gt;,现在来Demo一下。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>EOF in SHELL</title>
+      <link>https://ycat.top/post/eof/</link>
+      <pubDate>Mon, 05 Aug 2019 21:29:48 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/eof/</guid>
+      <description>&lt;p&gt;　　SHELL中打印字符时用&lt;code&gt;echo&lt;/code&gt;, 当打印N多行字符时，显然ECHO有点吃力。这时候就需要EOF上场了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;cat &amp;lt;&amp;lt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;EOF&amp;#34;&lt;/span&gt;
+ /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;   /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;           /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt; /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;                 /&lt;span class=&#34;nv&#34;&gt;$$$$$$$$&lt;/span&gt;  /&lt;span class=&#34;nv&#34;&gt;$$$$$$&lt;/span&gt;  /&lt;span class=&#34;nv&#34;&gt;$$$$$$$$&lt;/span&gt;
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;          &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;                &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;_____/ /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;__  &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;_____/
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  /&lt;span class=&#34;nv&#34;&gt;$$$$$$&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  /&lt;span class=&#34;nv&#34;&gt;$$$$$$&lt;/span&gt;       &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$$$$$$$&lt;/span&gt; /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;__  &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt; /&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;__  &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$$$&lt;/span&gt;$   &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$$$&lt;/span&gt;$   
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;__  &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$$$$$$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;se&#34;&gt;\ &lt;/span&gt;&lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;__/   &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;__/   
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;_____/&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$$$$$$&lt;/span&gt;$&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$$$$$$&lt;/span&gt;/      &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$$$$$$$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;  &lt;span class=&#34;nv&#34;&gt;$$$$$$&lt;/span&gt;/&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; &lt;span class=&#34;nv&#34;&gt;$$&lt;/span&gt;      
+&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;__/  &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;__/ &lt;span class=&#34;se&#34;&gt;\_&lt;/span&gt;______/&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;__/&lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;__/ &lt;span class=&#34;se&#34;&gt;\_&lt;/span&gt;_____/       &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;________/ &lt;span class=&#34;se&#34;&gt;\_&lt;/span&gt;_____/ &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt;__/      
+EOF&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>编译全静态无依赖GO可执行程序</title>
+      <link>https://ycat.top/post/build_static_go/</link>
+      <pubDate>Sun, 04 Aug 2019 22:54:59 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/build_static_go/</guid>
+      <description>&lt;p&gt;　　&lt;a href=&#34;!https://golang.org&#34;&gt;Go&lt;/a&gt;非常强悍的新兴语言， 未来大数据，云计算的天下，非GO莫属。 编译一个无任何动态链接库依赖的程序是非常有用的，因为你不知道你的程序将会在什么环境上运行。而且结合Docker这个运行平台，静态可执行程序有你意想不到的效果！&lt;/p&gt;
+
+&lt;h2 id=&#34;编译命令&#34;&gt;编译命令&lt;/h2&gt;
+
+&lt;p&gt;&lt;code&gt;go install -v -ldflags &#39;-extldflags -static -s -w&#39;&lt;/code&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Travis 自动布署 Hugo Github Page</title>
+      <link>https://ycat.top/post/deploy_page_ingithub/</link>
+      <pubDate>Sun, 04 Aug 2019 15:28:57 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/deploy_page_ingithub/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;!https://github.com&#34;&gt;GitHub&lt;/a&gt; 大名鼎鼎，免费代码托管平台。&lt;br /&gt;
+   &lt;a href=&#34;!https://gohugo.io&#34;&gt;Hugo&lt;/a&gt; 是golang写的一个静态BLOG程序，目前非常火爆。&lt;br /&gt;
+   &lt;a href=&#34;!https://travis-ci.org&#34;&gt;Travis&lt;/a&gt;是支持Github自动化CI的一个利器，免费实用。&lt;/p&gt;
+
+&lt;p&gt;三者结合起来，一个持续更新自动布署的&lt;a href=&#34;!https://ycat.top&#34;&gt;Blog&lt;/a&gt;就此诞生&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Vpn</title>
+      <link>https://ycat.top/post/vpn/</link>
+      <pubDate>Sun, 23 Jun 2019 21:34:17 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/vpn/</guid>
+      <description>访问不了Google, 很饭， 因为百度太不争气了。搜出来的都是些什么乱七八糟。 总是有这么些需求的。所以我在网上搜索了一些免费临时可以用的VPN</description>
+    </item>
+    
+    <item>
+      <title>DNS issue</title>
+      <link>https://ycat.top/post/dnsissue/</link>
+      <pubDate>Mon, 17 Jun 2019 21:58:01 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/dnsissue/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;做生意讲信誉 &amp;mdash;- 理所当然&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;issue&#34;&gt;Issue&lt;/h2&gt;
+
+&lt;p&gt;　　ping IP successful, but ping host failed.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>K8s is starting</title>
+      <link>https://ycat.top/post/k8starting/</link>
+      <pubDate>Mon, 17 Jun 2019 21:41:41 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/k8starting/</guid>
+      <description>kubernetes is starting&amp;hellip; 天朝内没办法，kubernets镜像下载不了。 下载一个vpn. 过二十几分钟就好了。 我下载好了。打包了docker 虚拟机。下载后替换就行</description>
+    </item>
+    
+    <item>
+      <title>618</title>
+      <link>https://ycat.top/post/618/</link>
+      <pubDate>Sun, 16 Jun 2019 21:58:24 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/618/</guid>
+      <description>&lt;iframe src=&#34;//player.bilibili.com/player.html?aid=55110789&amp;cid=96366234&amp;page=1&#34; scrolling=&#34;no&#34; border=&#34;0&#34; frameborder=&#34;no&#34; framespacing=&#34;0&#34; width=&#34;100%&#34; height=&#34;600&#34; allowfullscreen=&#34;true&#34;&gt; &lt;/iframe&gt;
+
+&lt;p&gt;&amp;ensp;&amp;ensp;老铁们，61high够了，高考也结束了，为了庆祝端午。我们是不是应该趁着618干他一票。
+哈哈，那就来B站装机吧。我是纯真小白一枚。上一次配电脑己是十几年前大学里找同学帮忙配的一台xp系统电脑。依西还记得当年内存512M,硬盘128G,17寸纯屏显示器。&lt;/p&gt;
+
+&lt;p&gt;　 真是逝者如斯夫,不舍昼夜啊。十多年过去了，我依旧还是一只菜鸟，这次我作为一只菜鸟给大家
+分享一下我这次的攒机经历，总共三天，希望对同为小白的你有所借鉴。大神轻拍。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Top 命令高级用法实例</title>
+      <link>https://ycat.top/post/top/</link>
+      <pubDate>Mon, 24 Dec 2018 10:31:14 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/top/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;监控linux系统状态命令,CPU MEM&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;　　top命令是Linux下常用的性能分析工具，能够实时显示系统中各个进程的资源占用状况，类似于Windows的任务管理器。&lt;/p&gt;
+
+&lt;p&gt;　　top显示系统当前的进程和其他状况,是一个动态显示过程,即可以通过用户按键来不断刷新当前状态.如果在前台执行该命令,它将独占前台,直到用户终止该程序为止. 比较准确的说,top命令提供了实时的对系统处理器的状态监视.它将显示系统中CPU最“敏感”的任务列表.该命令可以按CPU使用.内存使用和执行时间对任务进行排序；而且该命令的很多特性都可以通过交互式命令或者在个人定制文件中进行设定.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Sed 命令高级用法实例</title>
+      <link>https://ycat.top/post/sed/</link>
+      <pubDate>Sat, 27 Oct 2018 10:31:14 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/sed/</guid>
+      <description>基础语法 替换sed默认匹配符/, 任意字符前转义如@= \@, &amp;amp;= \# &amp;amp; 引用匹配变量 打印行数 大小写替换 圆括号匹配 合并两行内容 打印行数 删除重复行 删除所有空</description>
+    </item>
+    
+    <item>
+      <title>Go Raw Socket Iplayer</title>
+      <link>https://ycat.top/post/go-raw-socket-iplayer/</link>
+      <pubDate>Sat, 23 Sep 2017 10:31:14 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/go-raw-socket-iplayer/</guid>
+      <description>起因 最近有个项目,需要转发UDP数据包,并且增加额外的数据包头, 于是在同事的指导下,对网络协议这个抽象的概念有了全新的认识.结合Wiresh</description>
+    </item>
+    
+    <item>
+      <title>Studio messy code</title>
+      <link>https://ycat.top/post/messycode/</link>
+      <pubDate>Sun, 10 Sep 2017 10:47:25 +0800</pubDate>
+      
+      <guid>https://ycat.top/post/messycode/</guid>
+      <description>项目源码显示乱码 设置工程编码为UTF-8 settings-&amp;gt;editor-&amp;gt;file Encodings-&amp;gt;UTF-8 控制台,IDE本身 修改IDE本身编码为UTF-8 1 2 # custom Android Studio VM options, see http://tools.android.com/tech-docs/configuration -Dfile.encoding=UTF-8 中文输入框乱码 sudo vim /opt/android-studio/bin/studio.sh 1 2 3</description>
+    </item>
+    
+  </channel>
+</rss>

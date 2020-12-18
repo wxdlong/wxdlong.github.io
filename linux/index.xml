@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linuxes on Even - A super concise theme for Hugo</title>
+    <link>https://ycat.top/linux/</link>
+    <description>Recent content in Linuxes on Even - A super concise theme for Hugo</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 21 Sep 2019 18:34:42 +0800</lastBuildDate>
+    
+	<atom:link href="https://ycat.top/linux/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Bash 快捷键,提升命令行效率!</title>
+      <link>https://ycat.top/linux/bash_key/</link>
+      <pubDate>Sat, 21 Sep 2019 18:34:42 +0800</pubDate>
+      
+      <guid>https://ycat.top/linux/bash_key/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;常使民无知无欲, 使夫知者不敢为也. 也无为, 则无不治.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;code&gt;set -x&lt;/code&gt;, Print commands and their arguments as they are executed.&lt;br /&gt;
+&lt;code&gt;set -e&lt;/code&gt;, Exit immediately if a command exits with a non-zero status.&lt;br /&gt;
+&lt;code&gt;+-&lt;/code&gt;, Using + rather than - causes these flags to be turned off.&lt;br /&gt;
+&lt;code&gt;set -o&lt;/code&gt;  ## 查看当前选项的设置状态&lt;br /&gt;
+Ctrl开头的快捷键一般是针对字符的，而Alt开头的快捷键一般是针对词的. 记住一些快捷键.让你的生活更愉快哟.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
